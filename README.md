@@ -18,5 +18,5 @@ Is case sensitive.
 
 I've only used it on Ubuntu so far.
 
-Requires selenium webdriver, if you don't have it you can run the command:
+Requires Firefox and the Selenium webdriver, if you don't have it you can run the command:
 gem install selenium-webdriver
