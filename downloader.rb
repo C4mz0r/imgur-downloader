@@ -1,5 +1,6 @@
 require 'selenium-webdriver' # gem install selenium-webdriver
 require 'net/http'
+require 'pry'
 
 class Downloader
   
@@ -39,8 +40,11 @@ class Downloader
     end
     
     def launchBrowser
-      @driver = Selenium::WebDriver.for :firefox
+      profile = Selenium::WebDriver::Firefox::Profile.new
+      profile['browser.privatebrowsing.autostart'] = true
+      @driver = Selenium::WebDriver.for :firefox, :profile => profile
       @driver.navigate.to @grid_url
+      pry
     end
     
     def downloadImages
