@@ -8,7 +8,7 @@ However, sometimes it just doesn't work.
 This script can be used to download the files instead if /zip doesn't work.
 
 How to use it:
-- Find a gallery that you want to download (e.g. the format should be imgur.com/gallery/<gallery_name>)
+- Find a gallery that you want to download (e.g. the format should be imgur.com/gallery/gallery_name)
 - Run the program and when prompted, provide the url in the format above.
 - The program will create a random directory and download the photos in order, numbering them.
 
