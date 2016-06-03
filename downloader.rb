@@ -1,6 +1,5 @@
 require 'selenium-webdriver' # gem install selenium-webdriver
 require 'net/http'
-#require 'pry'
 
 def convertToGridView(url)
   if url =~ /(\S*)\/gallery\/(\S*)/
