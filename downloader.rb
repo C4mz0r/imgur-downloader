@@ -1,6 +1,5 @@
 require 'selenium-webdriver' # gem install selenium-webdriver
 require 'net/http'
-require 'pry'
 
 class Downloader
   
@@ -24,6 +23,10 @@ class Downloader
         @http_host = $1
         @gallery_name = $2
         @grid_url = "#{$1}/a/#{$2}/layout/grid"
+      elsif url =~ /(\S*)\/a\/(\S*)/i
+        @http_host = $1
+        @gallery_name = $2
+        @grid_url = "#{$1}/a/#{$2}/layout/grid"
       else
         raise "gallery not found"
       end  
@@ -43,8 +46,7 @@ class Downloader
       profile = Selenium::WebDriver::Firefox::Profile.new
       profile['browser.privatebrowsing.autostart'] = true
       @driver = Selenium::WebDriver.for :firefox, :profile => profile
-      @driver.navigate.to @grid_url
-      pry
+      @driver.navigate.to @grid_url      
     end
     
     def downloadImages
