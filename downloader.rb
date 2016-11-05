@@ -50,9 +50,9 @@ class Downloader
     end
     
     def downloadImages
-      elements = @driver.find_elements(:css, "div.panel a")
-      elements.select {|e| e.attribute(:href).include? ".jpg"}.each_with_index do |elem, i|
-        theUrl = elem.attribute(:href)
+      elements = @driver.find_elements(:css, "span.post-grid-image")
+      elements.select {|e| e.attribute("data-href").include? ".jpg"}.each_with_index do |elem, i|
+        theUrl = "http:" + elem.attribute("data-href")
         downloadFile theUrl, "%03d" % i
       end
     end
